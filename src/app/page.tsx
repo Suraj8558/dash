@@ -2,12 +2,14 @@
 
 import { useAppSelector, useAppDispatch } from "@/store/hooks";
 import { RootState } from "@/store/store";
+import Modal from "@/components/Modal";
 import {
   increment,
   decrement,
   reset,
   multiply,
 } from "@/store/features/counterSlice";
+import CustomModal from "@/components/Modal";
 
 export default function Home() {
   const count = useAppSelector((state: RootState) => state.counter.value);
@@ -40,6 +42,7 @@ export default function Home() {
       >
         Reset
       </button>
+      <CustomModal />
     </main>
   );
 }
